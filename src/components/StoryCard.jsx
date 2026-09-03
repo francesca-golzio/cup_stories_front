@@ -5,8 +5,15 @@ export default function StoryCard({story}) {
 
   return (
     <>
-      <div className="story_card col-md-6 col-lg-4 my-3" key={story.slug}>
+      <div className="col-md-6 col-lg-4 my-3" key={story?.slug}>
         <div className="card">
+
+          <div className="story_tags">
+            {story?.tags.map((tag) => (
+              <div className="story_tag px-2" key={tag.label}>{tag.label} &nbsp;</div>
+            ))}
+          </div>
+
           <img src={story.cover_img} className="card-img-top" alt="story cover image" />
           <div className="card-body">
             <h4 className="card-title title_font">{story.title}</h4>

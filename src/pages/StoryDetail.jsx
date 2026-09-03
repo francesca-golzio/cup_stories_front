@@ -43,6 +43,12 @@ export default function StoryDetail() {
           <h2 className="m-3 mt-5 mb-4 title_font">{story?.title}</h2>
           <p className="story_text">{story?.content}</p>
 
+          <div className="d-flex flex-column my-5">
+            {story?.tags.map((tag) => (
+              <div className="story_tag" key={tag?.label}>{tag?.label}</div>
+            ))}
+          </div>
+
           <address className="d-flex flex-column text-muted gap-2 m-3 my-5">
             <div className="d-flex gap-3 text-muted">
               <img src={story?.author?.photo} className="rounded-circle" style={{ width: '75px', height: '75px' }} alt="" />
