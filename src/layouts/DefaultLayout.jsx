@@ -8,9 +8,7 @@ export default function DefaultLayout() {
       <AppHeader />
 
       <main>
-        <div className="container">
           <Outlet />
-        </div>
       </main>
       
       <AppFooter />
