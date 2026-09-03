@@ -61,6 +61,7 @@ export default function StoriesList() {
                   <div className="d-flex justify-content-between">
                     <div className="card-text">{story.author.name} {story.author.surname}</div>
                     <div className="card-text">Issue {story.issue.pubblication_number}</div>
+                    <Link to={`/short-stories/${story.slug}`}>read</Link>
                   </div>
                 </div>
               </div>
