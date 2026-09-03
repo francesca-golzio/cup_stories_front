@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useStory } from "../contexts/StoryContext";
 import axios from 'axios';
 
 export default function StoriesList() {
 
   const endpoint = import.meta.env.VITE_API_BASE_URL;
-  const [stories, setStories] = useState([]);
+  const { stories, setStories, setStory } = useStory();
+  // const [ setStories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setlastPage] = useState(1);
 
