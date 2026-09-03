@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useStory } from "../contexts/StoryContext";
 import axios from 'axios';
+import Loader from "../components/Loader";
 
 export default function StoriesList() {
 
   const endpoint = import.meta.env.VITE_API_BASE_URL;
-  const { stories, setStories, setStory } = useStory();
+  const { stories, setStories, loading, setLoading } = useStory();
   // const [ setStories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setlastPage] = useState(1);
 
   function fetchStories() {
 
-    /* start loader */
+    //console.log(loading);
+    setLoading(true);
 
     axios.get(endpoint + '/stories', {
       params: {
@@ -30,7 +31,7 @@ export default function StoriesList() {
         console.log(err);
       })
       .then(() => {
-        /* stop loader */
+        setLoading(false);
       })
   }
 
@@ -51,6 +52,7 @@ export default function StoriesList() {
   return (
     <>
       <div className="container">
+        <Loader />
         <div className="row">
           {stories.map((story) => (
             <div className="col-md-6 col-lg-4 my-3" key={story.slug}>

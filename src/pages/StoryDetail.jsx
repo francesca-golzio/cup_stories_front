@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import { useStory } from "../contexts/StoryContext";
 import { useParams } from "react-router-dom";
 import axios from 'axios';
+import Loader from "../components/Loader";
 
 export default function StoryDetail() {
 
-  const { story, setStory } = useStory();
+  const { story, setStory, loading, setLoading } = useStory();
   const { slug } = useParams();
   const endpoint = import.meta.env.VITE_API_BASE_URL;
   // const [story, setStory] = useState({});
 
   function fetchStory() {
 
-    /* start loader */
+    setLoading(true);
+
     axios.get(endpoint + `/stories/${slug}`)
       .then((res) => {
         console.log(res.data);
@@ -22,7 +24,7 @@ export default function StoryDetail() {
         console.log(err);
       })
       .then(() => {
-        /* stop loader */
+        setLoading(false);
       })
   }
 
@@ -35,6 +37,7 @@ export default function StoryDetail() {
   return (
     <>
       <div>
+        <Loader />
         <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
         <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
           <h2 className="m-3 mt-5 mb-4">{story?.title}</h2>

@@ -4,7 +4,7 @@ const StoryContext = createContext();
 
 function StoryProvider({children}) {
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [stories, setStories] = useState([]);
   const [story, setStory] = useState([]);
 
@@ -12,8 +12,8 @@ function StoryProvider({children}) {
   return (
     <StoryContext.Provider 
       value={{
-        isLoading, 
-        setIsLoading, 
+        loading, 
+        setLoading, 
         stories, 
         setStories, 
         story, 
