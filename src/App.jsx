@@ -4,6 +4,8 @@ import DefaultLayout from './layouts/DefaultLayout.jsx';
 import CupStoriesHome from './pages/CupStoriesHome.jsx';
 import StoriesList from './pages/StoriesList.jsx';
 import StoryDetail from './pages/StoryDetail.jsx';
+import "@fontsource-variable/crimson-pro"; 
+import '@fontsource-variable/quicksand/wght.css';
 
 function App() {
 

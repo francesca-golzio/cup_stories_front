@@ -40,8 +40,8 @@ export default function StoryDetail() {
         <Loader />
         <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
         <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
-          <h2 className="m-3 mt-5 mb-4">{story?.title}</h2>
-          <p>{story?.content}</p>
+          <h2 className="m-3 mt-5 mb-4 title_font">{story?.title}</h2>
+          <p className="story_text">{story?.content}</p>
 
           <address className="d-flex flex-column text-muted gap-2 m-3 my-5">
             <div className="d-flex gap-3 text-muted">

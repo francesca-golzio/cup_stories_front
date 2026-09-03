@@ -1,10 +1,32 @@
+/* Import Bootstrap */
 @import url('bootstrap');
 
+/* CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Commons */
+body {
+  font-family: 'Quicksand Variable', sans-serif;
+}
+
+.title_font {
+  font-family: "Crimson Pro Variable";
+}
+
+.story_text {
+  font-family: 'Quicksand Variable', sans-serif;
+  color: black;
+  line-height: 1.8rem;;
+}
+
+
+
+
+/* Footer */
 
 footer {
   background-color: #f8f9fa;
