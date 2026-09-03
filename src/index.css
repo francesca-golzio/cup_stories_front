@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+/* Color Palette */
+:root {
+  --accent-color: #ffc107;
+  --black: #000000;
+  --light-color: #f8f9fa;
+}
+
 /* Commons */
 body {
   font-family: 'Quicksand Variable', sans-serif;
@@ -19,7 +26,7 @@ body {
 
 .story_text {
   font-family: 'Quicksand Variable', sans-serif;
-  color: black;
+  color: var(--black);
   line-height: 1.8rem;
   ;
 }
@@ -30,9 +37,9 @@ body {
 }
 
 .story_tag {
-  color: black;
+  color: var(--black);
   font-size: 0.75rem;
-  background-color: rgb(255, 193, 7);
+  background-color: var(--accent-color);
   border-radius: 0 5px 5px 0;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
   padding: 0 15px;
@@ -46,7 +53,7 @@ body {
 /* Footer */
 
 footer {
-  background-color: #f8f9fa;
+  background-color: var(--light-color);
   text-align: center;
   padding: 1.5rem;
 }
