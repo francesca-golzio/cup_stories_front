@@ -16,7 +16,7 @@ function App() {
           <Routes>
             <Route element={<DefaultLayout />} >
               <Route index element={<CupStoriesHome />} />
-              <Route path='/short-stories-all' element={<StoriesList />} />
+              <Route path='/short-stories' element={<StoriesList />} />
               <Route path='/short-stories/:slug' element={<StoryDetail />} />
             </Route>
           </Routes>

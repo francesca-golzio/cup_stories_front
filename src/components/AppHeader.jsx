@@ -26,7 +26,7 @@ export default function AppHeader() {
                   <NavLink className="nav-link active"  to="/" aria-current="page">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/short-stories-all">Short Stories</NavLink>
+                  <NavLink className="nav-link" to="/short-stories">Short Stories</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="#">Issues</NavLink>
