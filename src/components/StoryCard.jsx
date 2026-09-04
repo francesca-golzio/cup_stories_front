@@ -8,7 +8,7 @@ export default function StoryCard({ story }) {
   return (
     <>
       <div className="col-md-6 col-lg-4 my-3" key={story?.slug}>
-        <div className="card story_card">
+        <div className="card story_card" style={{ '--issue-color': story?.issue?.color }}>
 
           <div className="story_tags">
             {story?.tags.map((tag) => (

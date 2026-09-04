@@ -7,6 +7,8 @@ function StoryProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [stories, setStories] = useState([]);
   const [story, setStory] = useState([]);
+  const [issues, setIssues] = useState([]);
+  const [issue, setIssue] = useState([]);
 
   function getIncipit(text) {
     const incipit = text.slice(0, 120);
@@ -22,7 +24,11 @@ function StoryProvider({ children }) {
         setStories,
         story,
         setStory,
-        getIncipit
+        getIncipit,
+        issues,
+        setIssues,
+        issue,
+        setIssue
       }}>
       {children}
     </StoryContext.Provider>

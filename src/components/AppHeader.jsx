@@ -23,13 +23,13 @@ export default function AppHeader() {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
               <ul className="navbar-nav me-auto mt-2 mt-lg-0">
                 <li className="nav-item">
-                  <NavLink className="nav-link active"  to="/" aria-current="page">Home</NavLink>
+                  <NavLink className="nav-link"  to="/" aria-current="page">Home</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/short-stories">Short Stories</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="#">Issues</NavLink>
+                  <NavLink className="nav-link" to="/issues">Issues</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="#">Authors</NavLink>

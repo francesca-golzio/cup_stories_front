@@ -11,6 +11,8 @@
 /* Color Palette */
 :root {
   --accent-color: #ffc107;
+  --issue-color: #ff8707; /* default fallback */
+  --issue-color-light: #ff870755; /* default fallback */
   --black: #000000;
   --light-color: #f8f9fa;
 }
@@ -22,6 +24,7 @@ body {
 
 .title_font {
   font-family: "Crimson Pro Variable";
+  color: var(--black);
 }
 
 .story_text {
@@ -31,15 +34,16 @@ body {
   ;
 }
 
-.story_tags {
+.story_tags,
+.issue_number_container {
   position: absolute;
   padding-top: 10px;
 }
 
 .story_tag {
-  color: var(--black);
+  color: var(--light-color);
   font-size: 0.75rem;
-  background-color: var(--accent-color);
+  background-color: var(--issue-color);
   border-radius: 0 5px 5px 0;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
   padding: 0 15px;
@@ -52,6 +56,27 @@ body {
   box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
 }
 
+
+.issue_card {
+  background-color: var(--issue-color-light);
+  border: none;
+  box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
+}
+
+.issue_img {
+  background-color: var(--issue-color-light);
+
+}
+
+.issue_number {
+  color: var(--light-color);
+  background-color: var(--issue-color);
+  border-radius: 0 5px 5px 0;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 0.5px 15px;
+  width: fit-content;
+  margin: 5px 0;
+}
 
 /* Footer */
 
