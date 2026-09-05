@@ -15,6 +15,16 @@ function StoryProvider({ children }) {
     return incipit + '...';
   }
 
+  function getYearMonth(datestring) {
+    const months_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const date = new Date(datestring);
+    const year = date.getFullYear();
+    const month_index = date.getMonth();
+    const month = months_names[month_index];
+
+    return `${month} ${year}`
+  }
+
   return (
     <StoryContext.Provider
       value={{
@@ -28,7 +38,8 @@ function StoryProvider({ children }) {
         issues,
         setIssues,
         issue,
-        setIssue
+        setIssue,
+        getYearMonth
       }}>
       {children}
     </StoryContext.Provider>

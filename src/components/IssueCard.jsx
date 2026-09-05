@@ -3,15 +3,7 @@ import { useStory } from "../contexts/StoryContext";
 
 export default function IssueCard({ issue }) {
 
-  function getYearMonth(datestring) {
-    const months_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const date = new Date(datestring);
-    const year = date.getFullYear();
-    const month_index = date.getMonth();
-    const month = months_names[month_index];
-
-    return `${month} ${year}`
-  }
+  const { getYearMonth } = useStory();
 
   return (
     <>
