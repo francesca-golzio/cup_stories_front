@@ -34,7 +34,7 @@ export default function IssueDetail() {
 
   return (
     <>
-      <div className="issue_detail_container" style={{
+      <div className="issue_detail_container pb-3" style={{
         '--issue-color': issue?.color, '--issue-color-light': issue?.color + '55', '--issue-image': 'url(' + issue?.cover_img + ')'
       }}>
 
@@ -55,42 +55,38 @@ export default function IssueDetail() {
 
         </section>
 
-        <div className="container p-5 mt-3">
+        <div className="issue_stories_container">
 
-          <div className="issue_stories_container">
+          <h4 className="title_font mb-4">In this issue</h4>
 
-            <h4 className="title_font mb-4">In this issue</h4>
-
-            <div className="container">
-              {stories.map((story) => {
-                return (
-                  <div className="row issue_story_block my-3" key={story?.slug}>
-                    <div className="col">
-                      <Link to={`/short-stories/${story?.slug}`}>
-                        <div className="d-flex gap-3 align-items-center">
-                          <i className="bi bi-bookmark-star"></i>
-                          <div className="issue_story_title">{story?.title}</div>
-                        </div>
-                      </ Link>
-                      <div className="d-flex gap-3">
-                        <div className="issue_story_author text-muted">
-                          <small>by </small>
-                          <Link to={`/authors/${story?.author?.slug}`}>{story?.author?.name} {story?.author?.surname}</Link>
-                        </div>
-                        <div className="issue_story_tags d-flex gap-3">
-                          {story?.tags.map((tag) => (
-                            <div className="issue_story_tag" key={tag.label}>{tag.label}</div>
-                          ))}
-                        </div>
+          <div className="container">
+            {stories.map((story) => {
+              return (
+                <div className="row issue_story_block my-3" key={story?.slug}>
+                  <div className="col">
+                    <Link to={`/short-stories/${story?.slug}`}>
+                      <div className="d-flex gap-3 align-items-center">
+                        <i className="bi bi-bookmark-star"></i>
+                        <div className="issue_story_title">{story?.title}</div>
+                      </div>
+                    </ Link>
+                    <div className="d-flex gap-3">
+                      <div className="issue_story_author text-muted">
+                        <small>by </small>
+                        <Link to={`/authors/${story?.author?.slug}`}>{story?.author?.name} {story?.author?.surname}</Link>
+                      </div>
+                      <div className="issue_story_tags d-flex gap-3">
+                        {story?.tags.map((tag) => (
+                          <div className="issue_story_tag" key={tag.label}>{tag.label}</div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                )
-              })}
+                </div>
+              )
+            })}
 
-            </div>
           </div>
-
         </div>
 
       </div>
