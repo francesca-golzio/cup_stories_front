@@ -12,10 +12,10 @@
 /* Custom variables */
 :root {
   --accent-color: #ffc107;
-  --issue-color: #4085d4;
   /* default fallback */
-  --issue-color-light: #4085d455;
+  --issue-color: #ffc107;
   /* default fallback */
+  --issue-color-light: #ffc10755;
   --black: #000000;
   --light-color: #f8f9fa;
 
@@ -48,6 +48,13 @@ i {
   line-height: 1.8rem;
   ;
 }
+
+
+a.nav-link.active {
+ border-bottom: 2px solid var(--accent-color);
+}
+
+
 
 .story_tags,
 .issue_number_container {
