@@ -16,14 +16,16 @@ export default function StoryCard({ story }) {
             ))}
           </div>
 
-          <img src={story?.cover_img} className="card-img-top" alt="story cover image" />
+          <Link to={`/short-stories/${story?.slug}`}>
+            <img src={story?.cover_img} className="card-img-top" alt="story cover image" />
+          </Link>
           <div className="card-body">
             <h4 className="card-title title_font">{story?.title}</h4>
-            <div className="incipit my-3">{story?.content &&getIncipit(story.content)}</div>
+            <div className="incipit my-3">{story?.content && getIncipit(story.content)}</div>
             <div className="d-flex justify-content-between mt-auto">
               <div className="card-text">by {story?.author?.name} {story?.author?.surname}</div>
               <Link to={`/issues/issue/${story?.issue?.pubblication_number}`}>Issue {story?.issue?.pubblication_number}</Link>
-              <Link to={`/short-stories/${story?.slug}`}>read</Link>
+              <Link to={`/short-stories/${story?.slug}`}><i className="bi bi-book-half mx-2"></i>read</Link>
             </div>
           </div>
         </div>
