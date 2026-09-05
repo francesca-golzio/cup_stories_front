@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useStory } from "../contexts/StoryContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from 'axios';
 import Loader from "../components/Loader";
 
@@ -17,7 +17,7 @@ export default function StoryDetail() {
 
     axios.get(endpoint + `/stories/${slug}`)
       .then((res) => {
-        console.log(res.data);
+        //console.log(res.data);
         setStory(res.data.results);
       })
       .catch((err) => {
@@ -36,17 +36,21 @@ export default function StoryDetail() {
 
   return (
     <>
-      <div>
+      <div style={{'--issue-color': story?.issue?.color, '--issue-color-light': story?.issue?.color + '40'}}>
         <Loader />
         <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
         <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
           <h2 className="m-3 mt-5 mb-4 title_font">{story?.title}</h2>
           <p className="story_text">{story?.content}</p>
 
-          <div className="d-flex flex-column my-5">
-            {story?.tags.map((tag) => (
-              <div className="story_tag" key={tag?.label}>{tag?.label}</div>
-            ))}
+          <div className="d-flex justify-content-between my-5">
+            <div className="d-flex flex-column">
+              {story?.tags && story?.tags.map((tag) => (
+                <div className="story_tag" key={tag?.label}>{tag?.label}</div>
+              ))}
+            </div>
+
+            <Link to={`/issues/issue/${story?.issue?.pubblication_number}`}>from Issue {story?.issue?.pubblication_number}</Link>
           </div>
 
           <address className="d-flex flex-column text-muted gap-2 m-3 my-5">

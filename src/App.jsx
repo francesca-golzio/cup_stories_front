@@ -7,6 +7,7 @@ import StoryDetail from './pages/StoryDetail.jsx';
 import IssuesList from './pages/IssuesList.jsx';
 import "@fontsource-variable/crimson-pro"; 
 import '@fontsource-variable/quicksand/wght.css';
+import IssueDetail from './pages/IssueDetail.jsx';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
               <Route path='/short-stories' element={<StoriesList />} />
               <Route path='/short-stories/:slug' element={<StoryDetail />} />
               <Route path='/issues' element={<IssuesList />} />
+              <Route path='/issues/issue/:pubblication_number' element={<IssueDetail />} />
             </Route>
           </Routes>
         </BrowserRouter>

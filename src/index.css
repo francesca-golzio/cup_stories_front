@@ -1,5 +1,6 @@
 /* Import Bootstrap */
 @import url('bootstrap');
+@import url('bootstrap-icons');
 
 /* CSS Reset */
 * {
@@ -8,18 +9,32 @@
   box-sizing: border-box;
 }
 
-/* Color Palette */
+/* Custom variables */
 :root {
   --accent-color: #ffc107;
-  --issue-color: #ff8707; /* default fallback */
-  --issue-color-light: #ff870755; /* default fallback */
+  --issue-color: #4085d4;
+  /* default fallback */
+  --issue-color-light: #4085d455;
+  /* default fallback */
   --black: #000000;
   --light-color: #f8f9fa;
+
+  --issue-image: none;
 }
 
 /* Commons */
 body {
   font-family: 'Quicksand Variable', sans-serif;
+}
+
+a {
+  color: var(--accent-color);
+  color: var(--issue-color);
+  text-decoration: none;
+}
+
+i {
+  font-size: 150%;
 }
 
 .title_font {
@@ -63,8 +78,43 @@ body {
   box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
 }
 
-.issue_img {
+.issue_card_img {
   background-color: var(--issue-color-light);
+}
+
+.issue_detail_container {
+  background-image: var(--issue-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.issue_jumbo_container {
+  position: relative;
+  width: 100%;
+
+  .jumbo_bg_color {
+    height: clamp(170px, 230px, 250px);
+    mix-blend-mode: color-burn;
+  }
+
+  .issue_jumbo_contents {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+
+    .issue_jumbo_date {
+      color: var(--light-color);
+    }
+
+    .issue_jumbo_title {
+      background-color: #ffffff60;
+      font-size: clamp(2rem, 3rem, 4.5rem);
+      text-align: center;
+      padding-top: 0.25rem;
+      padding-bottom: 0.75rem;
+      border-radius: 0 0 50px 50px;
+    }
+  }
 
 }
 
@@ -76,6 +126,38 @@ body {
   padding: 0.5px 15px;
   width: fit-content;
   margin: 5px 0;
+}
+
+
+.issue_stories_container {
+  background-color: var(--light-color);
+  padding: 2rem;
+  border-radius: 50px;
+  box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
+
+  .issue_story_title {
+    color: var(--black);
+  }
+  
+  .issue_story_author {
+    font-size: 0.75rem;
+    padding-left: 3rem;
+
+    a {
+      color: #212529;
+    }
+
+  }
+
+  .issue_story_tag {
+    color: var(--issue-color);
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+    border: 0.5px solid var(--issue-color);
+    border-radius: 5px;
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+
+  }
 }
 
 /* Footer */

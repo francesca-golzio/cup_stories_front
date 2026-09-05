@@ -14,7 +14,7 @@ export default function IssueCard({ issue }) {
             <div className="issue_number px-2" key={issue?.pubblication_number}>Issue {issue?.pubblication_number} &nbsp;</div>
           </div>
 
-          <img src={issue?.cover_img} className="issue_img card-img-top" alt="issue cover image" />
+          <img src={issue?.cover_img} className="issue_card_img card-img-top" alt="issue cover image" />
 
           <div className="card-body">
 
@@ -24,7 +24,7 @@ export default function IssueCard({ issue }) {
 
               <div className="muted-text"><small>{getYearMonth(issue?.published_at)}</small></div>
 
-              <Link to={`/issues/${issue?.slug}`}>read</Link>
+              <Link to={`/issues/issue/${issue?.pubblication_number}`}>read</Link>
 
             </div>
 
