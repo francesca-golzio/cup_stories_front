@@ -8,10 +8,8 @@ import PaginationNavMenu from "../components/PaginationNavMenu";
 export default function StoriesList() {
 
   const endpoint = import.meta.env.VITE_API_BASE_URL;
-  const { stories, setStories, loading, setLoading, error, setError, prevPage, nextPage } = useStory();
-  // const [ setStories] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [lastPage, setlastPage] = useState(1);
+  const { stories, setStories, setLoading, error, setError, setCurrentPage, currentPage, setlastPage, lastPage, prevPage, nextPage } = useStory();
+
 
   function fetchStories() {
 
@@ -71,7 +69,7 @@ export default function StoriesList() {
         </div>
       </div>
 
-      <PaginationNavMenu currentPage={currentPage} lastPage={lastPage} />
+      <PaginationNavMenu currentPage={currentPage} lastPage={lastPage} prevPage={prevPage} nextPage={nextPage} />
     </>
   )
 

@@ -10,6 +10,8 @@ function StoryProvider({ children }) {
   const [issues, setIssues] = useState([]);
   const [issue, setIssue] = useState([]);
   const [error, setError] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setlastPage] = useState(1);
 
   function getIncipit(text) {
     const incipit = text.slice(0, 120);
@@ -26,13 +28,13 @@ function StoryProvider({ children }) {
     return `${month} ${year}`
   }
 
-  function prevPage() {
+  function prevPage(currentPage) {
     if (currentPage > 1) {
       setCurrentPage((prev) => prev - 1);
     }
   }
 
-  function nextPage() {
+  function nextPage(currentPage, lastPage) {
     if (currentPage < lastPage) {
       setCurrentPage((prev) => prev + 1);
     }
@@ -56,7 +58,11 @@ function StoryProvider({ children }) {
         setIssue,
         getYearMonth,
         prevPage,
-        nextPage
+        nextPage,
+        currentPage,
+        setCurrentPage,
+        lastPage,
+        setlastPage
       }}>
       {children}
     </StoryContext.Provider>
