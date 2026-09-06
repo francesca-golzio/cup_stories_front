@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 export default function IssueDetail() {
 
   const endpoint = import.meta.env.VITE_API_BASE_URL;
-  const { issue, setIssue, setLoading, getYearMonth } = useStory();
+  const { issue, setIssue, setLoading, getYearMonth, error, setError } = useStory();
   const { pubblication_number } = useParams();
   const stories = issue?.stories || [];
 
@@ -21,7 +21,18 @@ export default function IssueDetail() {
         setIssue(res.data.results);
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err.response);
+        const status = err.response?.status;
+
+        if (status === 404) {
+          setError('Issue not found.');
+        } else if (status === 500) {
+          setError('Internal server error. Try again later.');
+        } else if (!err.response) {
+          setError('Network error. Try again later.');
+        } else {
+          setError(err.response?.data.message || 'Sorry, something went wrong.');
+        }
       })
       .then(() => {
         setLoading(false);
@@ -34,7 +45,10 @@ export default function IssueDetail() {
 
   return (
     <>
-      <div className="issue_detail_container pb-3" style={{
+      {
+        error
+          ? (<p className="alert alert-secondary text-center w-50 mx-auto m-3">{error}</p>)
+          : (<div className="issue_detail_container pb-3" style={{
         '--issue-color': issue?.color, '--issue-color-light': issue?.color + '55', '--issue-image': 'url(' + issue?.cover_img + ')'
       }}>
 
@@ -89,7 +103,8 @@ export default function IssueDetail() {
           </div>
         </div>
 
-      </div>
+          </div>)
+      }
     </>
   )
 }

@@ -6,7 +6,7 @@ import Loader from "../components/Loader";
 
 export default function StoryDetail() {
 
-  const { story, setStory, loading, setLoading } = useStory();
+  const { story, setStory, loading, setLoading, error, setError } = useStory();
   const { slug } = useParams();
   const endpoint = import.meta.env.VITE_API_BASE_URL;
   // const [story, setStory] = useState({});
@@ -21,7 +21,18 @@ export default function StoryDetail() {
         setStory(res.data.results);
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err.response);
+        const status = err.response?.status;
+
+        if (status === 404) {
+          setError('Story not found.');
+        } else if (status === 500) {
+          setError('Internal server error. Try again later.');
+        } else if (!err.response) {
+          setError('Network error. Try again later.');
+        } else {
+          setError(err.response?.data.message || 'Sorry, something went wrong.');
+        }
       })
       .then(() => {
         setLoading(false);
@@ -36,7 +47,10 @@ export default function StoryDetail() {
 
   return (
     <>
-      <div style={{'--issue-color': story?.issue?.color, '--issue-color-light': story?.issue?.color + '40'}}>
+      {
+        error
+          ? (<p className="alert alert-secondary text-center w-50 mx-auto m-3">{error}</p>)
+          : (<div style={{'--issue-color': story?.issue?.color, '--issue-color-light': story?.issue?.color + '40'}}>
         <Loader />
         <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
         <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
@@ -64,7 +78,8 @@ export default function StoryDetail() {
             <span className="btn btn-sm btn-outline-secondary">about {story?.author?.name}</span>
           </address>
         </div>
-      </div>
+      </div>)
+      }
     </>
   )
 }

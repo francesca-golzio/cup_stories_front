@@ -9,6 +9,7 @@ function StoryProvider({ children }) {
   const [story, setStory] = useState([]);
   const [issues, setIssues] = useState([]);
   const [issue, setIssue] = useState([]);
+  const [error, setError] = useState(null);
 
   function getIncipit(text) {
     const incipit = text.slice(0, 120);
@@ -30,6 +31,8 @@ function StoryProvider({ children }) {
       value={{
         loading,
         setLoading,
+        error,
+        setError,
         stories,
         setStories,
         story,
