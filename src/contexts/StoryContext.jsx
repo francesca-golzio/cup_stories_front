@@ -26,6 +26,18 @@ function StoryProvider({ children }) {
     return `${month} ${year}`
   }
 
+  function prevPage() {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  }
+
+  function nextPage() {
+    if (currentPage < lastPage) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  }
+
   return (
     <StoryContext.Provider
       value={{
@@ -42,7 +54,9 @@ function StoryProvider({ children }) {
         setIssues,
         issue,
         setIssue,
-        getYearMonth
+        getYearMonth,
+        prevPage,
+        nextPage
       }}>
       {children}
     </StoryContext.Provider>

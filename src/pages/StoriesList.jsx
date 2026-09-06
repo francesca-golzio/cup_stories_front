@@ -3,11 +3,12 @@ import { useStory } from "../contexts/StoryContext";
 import axios from 'axios';
 import Loader from "../components/Loader";
 import StoryCard from "../components/StoryCard";
+import PaginationNavMenu from "../components/PaginationNavMenu";
 
 export default function StoriesList() {
 
   const endpoint = import.meta.env.VITE_API_BASE_URL;
-  const { stories, setStories, loading, setLoading, error, setError } = useStory();
+  const { stories, setStories, loading, setLoading, error, setError, prevPage, nextPage } = useStory();
   // const [ setStories] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setlastPage] = useState(1);
@@ -54,17 +55,6 @@ export default function StoriesList() {
 
   useEffect(fetchStories, [currentPage]);
 
-  function prevPage() {
-    if (currentPage > 1) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  }
-
-  function nextPage() {
-    if (currentPage < lastPage) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  }
 
   return (
     <>
@@ -81,10 +71,7 @@ export default function StoriesList() {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center gap-2 p-2">
-        <button className="btn btn-light" onClick={prevPage} disabled={currentPage === 1}>prev</button>
-        <button className="btn btn-light" onClick={nextPage} disabled={currentPage === lastPage}>next</button>
-      </div>
+      <PaginationNavMenu currentPage={currentPage} lastPage={lastPage} />
     </>
   )
 
