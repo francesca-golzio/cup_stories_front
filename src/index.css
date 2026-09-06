@@ -23,8 +23,21 @@
 }
 
 /* Commons */
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* body { */
+#root{
   font-family: 'Quicksand Variable', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 a {
@@ -176,6 +189,7 @@ a.nav-link.active {
 
 footer {
   background-color: var(--light-color);
+  flex-shrink: 0;
   text-align: center;
   padding: 1.5rem;
 }
