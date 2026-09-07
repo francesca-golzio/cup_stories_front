@@ -11,8 +11,17 @@ export default function StoryCard({ story }) {
         <div className="card story_card" style={{ '--issue-color': story?.issue?.color }}>
 
           <div className="story_tags">
-            {story?.tags.map((tag) => (
-              <div className="story_tag px-2" key={tag.label}>{tag.label} &nbsp;</div>
+            {story?.tags && story?.tags.map((tag) => (
+              <div className="story_tag_container" key={tag?.label}>
+                <div className="story_tag px-2">&nbsp;{tag?.label}&nbsp;&nbsp;</div>
+                <div className="story_tag_description p-3 rounded">
+                  <div className="d-flex justify-content-between">
+                    <h5>{tag?.name}</h5>
+                    <small>{tag?.label}</small>
+                  </div>
+                  <small>{tag?.description}</small>
+                </div>
+              </div>
             ))}
           </div>
 

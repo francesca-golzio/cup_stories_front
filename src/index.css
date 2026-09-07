@@ -23,13 +23,14 @@
 }
 
 /* Commons */
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
 /* body { */
-#root{
+#root {
   font-family: 'Quicksand Variable', sans-serif;
   display: flex;
   flex-direction: column;
@@ -64,7 +65,7 @@ i {
 
 
 a.nav-link.active {
- border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 
@@ -73,6 +74,11 @@ a.nav-link.active {
 .issue_number_container {
   position: absolute;
   padding-top: 10px;
+}
+
+.story_tag_container,
+.issue_story_tags {
+  position: relative;
 }
 
 .story_tag {
@@ -84,6 +90,25 @@ a.nav-link.active {
   padding: 0 15px;
   width: fit-content;
   margin: 5px 0;
+}
+
+.story_tag_description {
+  background-color: var(--light-color);
+  display: none;
+  position: absolute;
+  border: 1px solid var(--issue-color);
+  width: 300px;
+  z-index: 5;
+}
+
+.story_tag:hover,
+.issue_story_tag:hover {
+  cursor: help;
+}
+
+.story_tag:hover~.story_tag_description,
+.issue_story_tag:hover~.story_tag_description {
+  display: block;
 }
 
 .story_card {
@@ -163,7 +188,7 @@ a.nav-link.active {
   .issue_story_title {
     color: var(--black);
   }
-  
+
   .issue_story_author {
     font-size: 0.75rem;
     padding-left: 3rem;
