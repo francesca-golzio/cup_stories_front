@@ -46,9 +46,6 @@ export default function StoriesList() {
       .then(() => {
         setLoading(false);
       })
-      .then(() => {
-        setLoading(false);
-      })
   }
 
   useEffect(fetchStories, [currentPage]);
