@@ -63,7 +63,7 @@ export default function IssuesList() {
           )}
         </div>
       </div>
-      <PaginationNavMenu currentPage={currentPage} lastPage={lastPage} prevPage={prevPage} nextPage={nextPage}/>
+      <PaginationNavMenu currentPage={currentPage} lastPage={lastPage} prevPage={prevPage} nextPage={nextPage} setCurrentPage={setCurrentPage} />
     </>
   )
 }

@@ -23,15 +23,10 @@
 }
 
 /* Commons */
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
 
-/* body { */
 #root {
   font-family: 'Quicksand Variable', sans-serif;
+  background-color: var(--light-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -68,7 +63,13 @@ a.nav-link.active {
   border-bottom: 2px solid var(--accent-color);
 }
 
+.pagination_btn {
+  box-shadow: 1px 1px 20px 2px rgba(0, 0, 0, 0.08);
+}
 
+.btn_active {
+  border: 2px solid var(--accent-color);
+}
 
 .story_tags,
 .issue_number_container {
@@ -115,6 +116,7 @@ a.nav-link.active {
 }
 
 .story_card {
+  background-color: var(--light-color);
   border: none;
   box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
 }
