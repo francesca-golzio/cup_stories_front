@@ -78,13 +78,18 @@ export default function StoryDetail() {
 
               <address className="d-flex flex-column text-muted gap-2 m-3 my-5">
                 <div className="d-flex gap-3 text-muted">
-                  <img src={story?.author?.photo} className="rounded-circle" style={{ width: '75px', height: '75px' }} alt="" />
-                  <div className="d-flex flex-column gap-2 pt-2">
+                  <Link to={`/authors/${story?.author?.slug}`}>
+                    <img src={story?.author?.photo} className="rounded-circle" style={{ width: '75px', height: '75px' }} alt="" />
+                  </Link>
+                  <div className="d-flex flex-column gap-2 pt-2 w-100">
                     <div>by <span className="fw-bold">{story?.author?.name} {story?.author?.surname}</span></div>
-                    <p>{story?.author?.bio}</p>
+                    <div className="d-flex justify-content-end">
+                      <Link to={`/authors/${story?.author?.slug}`} className="about_author">
+                        <small>about {story?.author?.name}&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></small>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-                <span className="btn btn-sm btn-outline-secondary">about {story?.author?.name}</span>
               </address>
             </div>
           </div>)
