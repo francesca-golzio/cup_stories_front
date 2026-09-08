@@ -18,6 +18,7 @@
   --issue-color-light: #ffc10755;
   --black: #000000;
   --light-color: #f8f9fa;
+  --gray: #575757;
 
   --issue-image: none;
 }
@@ -55,7 +56,6 @@ i {
   font-family: 'Quicksand Variable', sans-serif;
   color: var(--black);
   line-height: 1.8rem;
-  ;
 }
 
 
@@ -188,34 +188,70 @@ a.nav-link.active {
   box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
   max-width: 750px;
   margin: 2rem auto 0;
-  
+
   .issue_story_author {
     font-size: 0.75rem;
     padding-left: 3rem;
-    
+
     a {
       color: #212529;
     }
-    
+
   }
-  
+
 }
 
-  div.issue_story_title,
-  div.author_story_title {
-      color: var(--black);
-  }
+div.issue_story_title,
+div.author_story_title {
+  color: var(--black);
+}
 
 .issue_story_tag,
 .author_story_tag {
   color: var(--issue-color);
   font-size: 0.75rem;
-/*   padding: 0 0.5rem;
-  border: 0.5px solid var(--issue-color);
-  border-radius: 5px; */
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
 
 }
+
+.author_list_card_container {
+
+  max-width: 800px;
+
+  .author_list_card {
+    background-color: var(--light-color);
+    border-top: 1px solid var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    border-left: 1px solid var(--accent-color);
+    box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+    aspect-ratio: 1/1;
+    padding: 15px 20px;
+    position:relative;
+    
+    .icon_more_about_author {
+      color: var(--gray);
+      position: absolute;
+      top: 5px;
+      right: 8px;
+    }
+
+    img {
+      width: 100px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .author_list_card_title {
+      color: var(--black);
+    }
+  }
+}
+
 
 .author_box {
   max-width: 800px;

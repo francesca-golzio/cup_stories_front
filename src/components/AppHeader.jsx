@@ -31,8 +31,8 @@ export default function AppHeader() {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/issues">Issues</NavLink>
                 </li>
-                <li className="nav-item disabled" aria-disabled="true">
-                  <NavLink className="nav-link" to="#">Authors</NavLink>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/authors">Authors</NavLink>
                 </li>
               </ul>
             </div>

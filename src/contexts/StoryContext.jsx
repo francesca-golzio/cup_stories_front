@@ -9,6 +9,7 @@ function StoryProvider({ children }) {
   const [story, setStory] = useState([]);
   const [issues, setIssues] = useState([]);
   const [issue, setIssue] = useState([]);
+  const [authors, setAuthors] = useState([]);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage, setlastPage] = useState(1);
@@ -57,6 +58,8 @@ function StoryProvider({ children }) {
         issue,
         setIssue,
         getYearMonth,
+        authors,
+        setAuthors,
         prevPage,
         nextPage,
         currentPage,

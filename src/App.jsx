@@ -8,6 +8,7 @@ import StoriesList from './pages/StoriesList.jsx';
 import StoryDetail from './pages/StoryDetail.jsx';
 import IssuesList from './pages/IssuesList.jsx';
 import IssueDetail from './pages/IssueDetail.jsx';
+import AuthorsList from './pages/AuthorsList.jsx';
 import AuthorDetail from './pages/AuthorDetail.jsx';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path='/short-stories/:slug' element={<StoryDetail />} />
               <Route path='/issues' element={<IssuesList />} />
               <Route path='/issues/issue/:pubblication_number' element={<IssueDetail />} />
+              <Route path='/authors' element={<AuthorsList />} />
               <Route path='/authors/:slug' element={<AuthorDetail />} />
             </Route>
           </Routes>
