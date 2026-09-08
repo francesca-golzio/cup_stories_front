@@ -50,10 +50,15 @@ export default function StoryDetail() {
       {
         error
           ? (<p className="alert alert-secondary text-center w-50 mx-auto m-3">{error}</p>)
-          : (<div style={{ '--issue-color': story?.issue?.color, '--issue-color-light': story?.issue?.color + '40' }}>
+          : (<div style={{ '--issue-color': story?.issue?.color }}>
+            
             <Loader />
-            <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
+
+            {(!loading && (
+              <>
+              <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
             <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
+
               <h2 className="m-3 mt-5 mb-4 title_font">{story?.title}</h2>
               <p className="story_text">{story?.content}</p>
 
@@ -85,13 +90,17 @@ export default function StoryDetail() {
                     <div>by <span className="fw-bold">{story?.author?.name} {story?.author?.surname}</span></div>
                     <div className="d-flex justify-content-end">
                       <Link to={`/authors/${story?.author?.slug}`} className="about_author">
-                        <small>about {story?.author?.name}&nbsp;&nbsp;<i class="bi bi-box-arrow-up-right"></i></small>
+                        <small>about {story?.author?.name}&nbsp;&nbsp;<i className="bi bi-box-arrow-up-right"></i></small>
                       </Link>
                     </div>
                   </div>
                 </div>
               </address>
+
             </div>
+              </>
+            ))}
+
           </div>)
       }
     </>
