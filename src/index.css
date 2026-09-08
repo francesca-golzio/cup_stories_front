@@ -110,8 +110,7 @@ a.nav-link.active {
 
 .story_tag:hover~.story_tag_description,
 .issue_story_tag:hover~.story_tag_description,
-.author_story_tag:hover~.story_tag_description
- {
+.author_story_tag:hover~.story_tag_description {
   display: block;
 }
 
@@ -189,30 +188,31 @@ a.nav-link.active {
   box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
   max-width: 750px;
   margin: 2rem auto 0;
-
-  .issue_story_title {
-    color: var(--black);
-  }
-
+  
   .issue_story_author {
     font-size: 0.75rem;
     padding-left: 3rem;
-
+    
     a {
       color: #212529;
     }
-
+    
   }
-
+  
 }
+
+  div.issue_story_title,
+  div.author_story_title {
+      color: var(--black);
+  }
 
 .issue_story_tag,
 .author_story_tag {
   color: var(--issue-color);
   font-size: 0.75rem;
-  padding: 0 0.5rem;
+/*   padding: 0 0.5rem;
   border: 0.5px solid var(--issue-color);
-  border-radius: 5px;
+  border-radius: 5px; */
   text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
 
 }
