@@ -14,7 +14,9 @@ export default function IssueCard({ issue }) {
             <div className="issue_number px-2" key={issue?.pubblication_number}>Issue {issue?.pubblication_number} &nbsp;</div>
           </div>
 
-          <img src={issue?.cover_img} className="issue_card_img card-img-top" alt="issue cover image" />
+          <Link to={`/issues/issue/${issue?.pubblication_number}`}>
+            <img src={issue?.cover_img} className="issue_card_img card-img-top" alt="issue cover image" />
+          </Link>
 
           <div className="card-body">
 

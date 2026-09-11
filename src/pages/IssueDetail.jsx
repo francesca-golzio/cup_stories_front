@@ -48,28 +48,27 @@ export default function IssueDetail() {
       {error
         ? <p className="alert alert-secondary text-center w-50 mx-auto m-3">{error}</p>
         : (
-          <div className="issue_detail_container pb-3" style={{
+          <div className="issue_upper_container" style={{
             '--issue-color': issue?.color, '--issue-image': 'url(' + issue?.cover_img + ')'
           }}>
 
             {loading && <Loader />}
 
             {(!loading && !error) && (
-              <>
-                <section className="issue_jumbo_container">
+              <div className="issue_container">
 
-                  <div className="jumbo_bg_color" style={{ backgroundColor: issue?.color }}></div>
-
-                  <div className="issue_jumbo_contents p-4">
-                    <div className="d-flex justify-content-between">
-                      <div className="issue_jumbo_date">{getYearMonth(issue?.published_at)}</div>
-                      <div className="issue_jumbo_date">Issue {issue?.pubblication_number}</div>
-                    </div>
-
-                    <h2 className="issue_jumbo_title title_font">{issue?.title}</h2>
+                <div className="jumbo_bg_color" style={{ backgroundColor: issue?.color }}></div>
+                
+                <div className="issue_details">
+                  {/* <div className="issue_jumbo_bg"> */}
+                  <div className="d-flex justify-content-between">
+                    <div className="issue_jumbo_detail">{getYearMonth(issue?.published_at)}</div>
+                    <div className="issue_jumbo_detail">Issue {issue?.pubblication_number}</div>
                   </div>
+                  {/* </div> */}
 
-                </section>
+                  <h2 className="issue_jumbo_title title_font">{issue?.title}</h2>
+                </div>
 
                 <div className="issue_stories_container">
 
@@ -113,7 +112,7 @@ export default function IssueDetail() {
 
                   </div>
                 </div>
-              </>
+              </div>
             )}
 
           </div>

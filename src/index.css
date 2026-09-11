@@ -152,70 +152,81 @@ header {
   background-color: var(--issue-color-light);
 }
 
-.issue_detail_container {
+
+.issue_upper_container {
+  position: relative;
   background-image: var(--issue-image);
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 
-.issue_jumbo_container {
-  position: relative;
-  width: 100%;
+
+.issue_container {
+  padding: 15px;
 
   .jumbo_bg_color {
-    height: clamp(170px, 230px, 250px);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: 50vh;
     mix-blend-mode: color-burn;
   }
 
-  .issue_jumbo_contents {
-    position: absolute;
-    top: 20px;
-    width: 100%;
+  .issue_details {
+    position: relative;
+    z-index: 1;
 
-    .issue_jumbo_date {
+    .issue_jumbo_detail {
       color: var(--light-color);
+      padding: 15px;
     }
 
     .issue_jumbo_title {
-      background-color: #ffffff60;
+      color: var(--light-color);
       font-size: clamp(2rem, 3rem, 4.5rem);
       text-align: center;
+      background-color: var(--black);
+      opacity: 0.8;
       padding-top: 0.25rem;
       padding-bottom: 0.75rem;
       border-radius: 0 0 50px 50px;
+      box-shadow: 1px 1px 20px 2px rgba(255, 255, 255, 0.5);      
+    }
+
+    .issue_number {
+      color: var(--light-color);
+      background-color: var(--issue-color);
+      border-radius: 0 5px 5px 0;
+      box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
+      padding: 0.5px 15px;
+      width: fit-content;
+      margin: 5px 0;
     }
   }
 
-}
+  .issue_stories_container {
+    position: relative;
+    z-index: 1;
 
-.issue_number {
-  color: var(--light-color);
-  background-color: var(--issue-color);
-  border-radius: 0 5px 5px 0;
-  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.2);
-  padding: 0.5px 15px;
-  width: fit-content;
-  margin: 5px 0;
-}
+    background-color: var(--light-color);
+    padding: 2rem;
+    border: 4px solid var(--issue-color);
+    border-top: none;
+    border-bottom: none;
+    border-radius: 35px;
+    box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
+    max-width: 750px;
+    margin: 2rem auto;
 
+    .issue_story_author {
+      font-size: 0.75rem;
+      padding-left: 3rem;
 
-.issue_stories_container {
-  background-color: var(--light-color);
-  padding: 2rem;
-  border: 4px solid var(--issue-color);
-  border-top: none;
-  border-bottom: none;
-  border-radius: 35px;
-  box-shadow: 1px 1px 18px 3px rgba(0, 0, 0, 0.1);
-  max-width: 750px;
-  margin: 2rem auto 0;
+      a {
+        color: #212529;
+      }
 
-  .issue_story_author {
-    font-size: 0.75rem;
-    padding-left: 3rem;
-
-    a {
-      color: #212529;
     }
 
   }

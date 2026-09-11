@@ -56,10 +56,10 @@ export default function StoryDetail() {
 
             {(!loading && (
               <>
-              <img src={story?.cover_img} alt="" className="w-100" style={{ height: '300px', objectFit: 'cover' }} />
-            <div className="container px-5 py-1" style={{ backgroundColor: 'white', maxWidth: '750px' }}>
+              <img src={story?.cover_img} alt={story?.title ?? 'story cover image'} className="w-100" style={{ height: '350px', objectFit: 'cover' }} />
+            <div className="container px-5 py-1 my-4 rounded-4" style={{ backgroundColor: 'white', maxWidth: '700px' }}>
 
-              <h2 className="m-3 mt-5 mb-4 title_font">{story?.title}</h2>
+              <h2 className="m-3 mt-4 mb-4 title_font">{story?.title}</h2>
               <p className="story_text">{story?.content}</p>
 
               <div className="d-flex justify-content-between my-5">
