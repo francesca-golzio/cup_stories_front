@@ -7,8 +7,8 @@ export default function IssueCard({ issue }) {
 
   return (
     <>
-      <div className="col-md-6 col-lg-4 my-3" key={issue?.slug}>
-        <div className="card issue_card" style={{ '--issue-color': issue?.color, '--issue-color-light': issue?.color + '40' }}>
+      <div className="col col-md-6 col-lg-4 my-3" key={issue?.slug}>
+        <div className="card h-100 issue_card" style={{ '--issue-color': issue?.color, '--issue-color-light': issue?.color + '40' }}>
 
           <div className="issue_number_container">
             <div className="issue_number px-2" key={issue?.pubblication_number}>Issue {issue?.pubblication_number} &nbsp;</div>
@@ -20,15 +20,16 @@ export default function IssueCard({ issue }) {
 
             <h4 className="card-title title_font mb-3">{issue?.title}</h4>
 
-            <div className="d-flex justify-content-between mt-auto">
+          </div>
 
-              <div className="muted-text"><small>{getYearMonth(issue?.published_at)}</small></div>
+          <div className="d-flex justify-content-between m-3 mt-auto">
 
-              <Link to={`/issues/issue/${issue?.pubblication_number}`}>read</Link>
+            <div className="muted-text"><small>{getYearMonth(issue?.published_at)}</small></div>
 
-            </div>
+            <Link to={`/issues/issue/${issue?.pubblication_number}`}><i className="bi bi-book-half mx-2"></i>read</Link>
 
           </div>
+
         </div>
       </div>
     </>
