@@ -4,11 +4,16 @@ export default function AppHeader() {
   return (
     <>
 
-          {/* <li><NavLink to="/short-stories-all">Short Stories</NavLink></li> */}
+      {/* <li><NavLink to="/short-stories-all">Short Stories</NavLink></li> */}
       <header>
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
           <div className="container gap-4">
-            <NavLink to="/" className="navbar-brand"> <h1>Cup Stories</h1></NavLink>
+            <NavLink to="/" className="navbar-brand">
+              <div className="d-flex gap-2 align-items-center">
+                <div className="header_logo_container d-none d-md-block"><img src="/cup-stories.png" id="header_logo" alt="logo" /></div>
+                <h1 className="title_font">Cup Stories</h1>
+              </div>
+            </NavLink>
             <div className="navbar-text fst-italic fs-4 text-center d-none d-lg-block w-100">Small Reading Treats</div>
             <button
               className="navbar-toggler d-lg-none"
