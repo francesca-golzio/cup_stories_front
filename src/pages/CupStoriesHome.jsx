@@ -61,7 +61,7 @@ export default function CupStoriesHome() {
               <div className="d-flex flex-wrap justify-content-center align-items-center gap-4 py-3">
                 <Link to="/short-stories" className="btn btn-warning fs-4 all_stories_btn">Find a story</Link>
                 <span>or</span>
-                <Link to="#" className="btn btn-outline-warning text-dark fs-4 all_issues_btn">Browse an Issue</Link>
+                <Link to="/issues" className="btn btn-outline-warning text-dark fs-4 all_issues_btn">Browse an Issue</Link>
               </div>
             </div>
           </div>
