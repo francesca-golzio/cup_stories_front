@@ -17,7 +17,7 @@
   /* default fallback */
   --issue-color-light: #ffc10755;
   --black: #000000;
-  --light-color: #f8f9fa;
+  --light-color: #f0f8ff;
   --gray: #575757;
 
   --issue-image: none;
@@ -32,6 +32,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
 
 main {
   flex-grow: 1;
@@ -78,7 +79,7 @@ header {
   h1 {
     font-size: 3rem;
   }
-  
+
   .header_logo_container {
     /* background-color: red; */
     flex-shrink: 0;
@@ -90,6 +91,37 @@ header {
       aspect-ratio: 1/1;
     }
   }
+}
+
+.home_hero {
+  gap: 2rem;
+  width: 100%;
+  
+}
+
+.home_hero_logo {
+  /* width: 300px; */
+  aspect-ratio: 1/1;
+}
+
+.home_hero_text {
+  text-align: center;  
+  padding: 0 2rem;
+}
+
+.separator_scroll_down {
+  color: var(--accent-color);
+  font-size: 2rem;
+}
+
+.keep_reading_btn,
+.rando_story_btn {
+  width: max-content;
+}
+
+.all_issues_btn,
+.all_stories_btn {
+  width: max-content;
 }
 
 .story_tags,
@@ -191,7 +223,7 @@ header {
       padding-top: 0.25rem;
       padding-bottom: 0.75rem;
       border-radius: 0 0 50px 50px;
-      box-shadow: 1px 1px 20px 2px rgba(255, 255, 255, 0.5);      
+      box-shadow: 1px 1px 20px 2px rgba(255, 255, 255, 0.5);
     }
 
     .issue_number {
