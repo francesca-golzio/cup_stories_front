@@ -11,7 +11,7 @@ export default function IssueCard({ issue }) {
         <div className="card h-100 issue_card" style={{ '--issue-color': issue?.color, '--issue-color-light': issue?.color + '40' }}>
 
           <div className="issue_number_container">
-            <div className="issue_number px-2" key={issue?.pubblication_number}>Issue {issue?.pubblication_number} &nbsp;</div>
+            <div className="issue_card_number px-2" key={issue?.pubblication_number}>Issue {issue?.pubblication_number} &nbsp;</div>
           </div>
 
           <Link to={`/issues/issue/${issue?.pubblication_number}`}>
