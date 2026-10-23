@@ -28,8 +28,8 @@ This repository hosts the React frontend, while the backend is maintained separa
       <img src="./public/screenshots/mobile-home-to-rand-story.gif" alt="mobile navigation from home to keep reading the story" style="width: 100%; object-fit: cover;">
     </td>
     <td colspan="3">
-      <img src="./public/screenshots/from-issue-to-story.gif" alt="??" style="width: 100%; object-fit: cover;"><br><br>
-      <img src="./public/screenshots/from-stories-to-author.gif" alt="??" style="width: 100%; object-fit: cover;">
+      <img src="./public/screenshots/from-issue-to-story.gif" alt="desktop navigation from home throught issues to story" style="width: 100%; object-fit: cover;"><br><br>
+      <img src="./public/screenshots/from-stories-to-author.gif" alt="desktop navigation from stories to author, to story to authors" style="width: 100%; object-fit: cover;">
     </td>
   </tr>
 </table>
